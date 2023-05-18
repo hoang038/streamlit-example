@@ -62,7 +62,7 @@ st.write('Your selected:',options)
 st.header('st.checkbox')
 st.write('What would you like to order?')
 icecream = st.checkbox('Ice cream')
-coffiee = st.checkbox('coffee')
+coffee = st.checkbox('coffee')
 cola = st.checkbox('Cola')
 if icecream:
      st.write("Great! Here's some more 🍦")
