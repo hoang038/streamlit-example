@@ -1,9 +1,3 @@
-#from collections import namedtuple
-#import altair as alt
-#import math
-#import pandas as pd
-import streamlit as st
-
 '''from datetime import time, datetime
 
 st.header('st.slider')
@@ -37,6 +31,7 @@ start_time = st.slider(
      format="MM/DD/YY - hh:mm")
 st.write("Start time:", start_time)'''
 
+import streamlit as st
 import pandas as pd
 import numpy as np
 
