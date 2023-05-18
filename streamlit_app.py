@@ -40,7 +40,7 @@ chart_data = pd.DataFrame(
     np.random.randn(20,3),
     columns = ['a','b','c']
 )
-st.line_chart(chart_data)'''
+st.line_chart(chart_data)
 
 import streamlit as st
 
@@ -72,11 +72,8 @@ if coffee:
 
 if cola:
      st.write("Here you go 🥤")
-
-st.header('st.latex')
-
-st.latex(r'''
-     a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
-     \sum_{k=0}^{n-1} ar^k =
-     a \left(\frac{1-r^{n}}{1-r}\right)
-     ''')
+'''
+# Using st.secrets
+import streamit as st
+st.title('st.secrets')
+st.write(st.secrets['message'])
