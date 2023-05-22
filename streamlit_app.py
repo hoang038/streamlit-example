@@ -110,7 +110,7 @@ for percent_complete in range(100):
      time.sleep(0.05)
      my_bar.progress(percent_complete + 1)
 
-st.balloons()'''
+st.balloons()
 
 import streamlit as st
 
@@ -131,24 +131,45 @@ with st.form('my_form'):
     submitted = st.form_submit_button('Submit')
 
 if submitted:
-     st.markdown(f'''
-        ☕ You have ordered:
-        - Coffee bean: `{coffee_bean_val}`
-        - Coffee roast: `{coffee_roast_val}`
-        - Brewing: `{brewing_val}`
-        - Serving type: `{serving_type_val}`
-        - Milk: `{milk_val}`
-        - Bring own cup: `{owncup_val}`
-        ''')
+     st.markdown('')
 else:
-    st.write('☝️ Place your order!')
+    st.write('☝️ Place your order!')'''
 
-# Short example of using an object notation
-st.header('2. Example of object notation')
+import streamlit as st
+import numpy as np
+import pandas as pd
+from time import time
 
-form = st.form('my_form_2')
-selected_val = form.slider('Select a value')
-form.form_submit_button('Submit')
+st.title('st.cache')
 
-st.write('Selected value: ', selected_val)    
+# Using cache
+a0 = time()
+st.subheader('Using st.cache')
 
+@st.cache(suppress_st_warning=True)
+def load_data_a():
+  df = pd.DataFrame(
+    np.random.rand(2000000, 5),
+    columns=['a', 'b', 'c', 'd', 'e']
+  )
+  return df
+
+st.write(load_data_a())
+a1 = time()
+st.info(a1-a0)
+
+
+# Not using cache
+b0 = time()
+st.subheader('Not using st.cache')
+
+def load_data_b():
+  df = pd.DataFrame(
+    np.random.rand(2000000, 5),
+    columns=['a', 'b', 'c', 'd', 'e']
+  )
+  return df
+
+st.write(load_data_b())
+b1 = time()
+st.info(b1-b0)
