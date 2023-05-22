@@ -187,7 +187,7 @@ def kg_to_lbs():
 st.header('Input')
 col1, spacer, col2 = st.columns([4,1,2])
 with col1:
-  pounds = st.number_input("Pounds:", key = "lbs", on_change =  )
+  pounds = st.number_input("Pounds:", key = "lbs", on_change = lbs_to_kg)
 with col2:
   kilogram = st.number_input("Kilograms:", key = "kg", on_change = kg_to_lbs)
 
