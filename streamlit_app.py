@@ -192,7 +192,7 @@ with col2:
   kilogram = st.number_input("Kilograms:", key = "kg", on_change = kg_to_lbs)
 
 st.header('Output')
-st.write("st.session_state object:", st.session_state)'''
+st.write("st.session_state object:", st.session_state)
 
 # How to use API by building the Bored API app
 import streamlit as st
@@ -224,4 +224,6 @@ with col1:
 with col2:
   st.metric(label='Type of Activity', value=suggested_activity['type'].capitalize(), delta='')
 with col3:
-  st.metric(label='Price', value=suggested_activity['price'], delta='')
+  st.metric(label='Price', value=suggested_activity['price'], delta='')'''
+
+
